@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import PageMeta from "../components/PageMeta";
-import DownloadCTA, { StoreNote } from "../components/DownloadCTA";
+import DownloadCTA, { ExeDownloadCTA, StoreNote, SmartScreenNotice } from "../components/DownloadCTA";
 import { SITE_CONFIG } from "../config/site";
 import HeroVisual from "../components/home/HeroVisual";
 import IntroSection from "../components/home/IntroSection";
@@ -27,27 +27,27 @@ export default function Home() {
           <div className="grid grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] items-center gap-[clamp(2rem,5vw,4rem)] max-[960px]:grid-cols-1">
             <div>
               <h1 id="hero-heading" className="mb-[1.2rem]" data-reveal>
-
                 Organize your files.
                 <span className="block text-accent-strong">Let AI handle the mess.</span>
               </h1>
               <p className="mb-[1.6rem] max-w-[32rem] text-[clamp(1.05rem,1.6vw,1.2rem)] text-ink-2" data-reveal style={{ "--reveal-delay": "70ms" }}>
-
                 JishAtlas analyzes your files and suggests a clean, logical organization while
                 keeping you in control of every change.
               </p>
-              <div className="cta-row mb-[1.6rem]" data-reveal style={{ "--reveal-delay": "140ms" }}>
-
+              <div className="cta-row mb-[1rem] flex-wrap items-stretch" data-reveal style={{ "--reveal-delay": "140ms" }}>
                 <DownloadCTA />
+                <ExeDownloadCTA />
                 <Link className="btn secondary" to="/docs/introduction">
                   View Documentation
                 </Link>
               </div>
-              <div className="mb-[0.9rem]" data-reveal style={{ "--reveal-delay": "210ms" }}>
+              <div className="mb-[1rem]" data-reveal style={{ "--reveal-delay": "180ms" }}>
                 <StoreNote compact />
               </div>
+              <div className="mb-[1.6rem] max-w-[32rem]" data-reveal style={{ "--reveal-delay": "210ms" }}>
+                <SmartScreenNotice />
+              </div>
               <div className="chip-row" data-reveal style={{ "--reveal-delay": "280ms" }}>
-
                 <span className="chip">
                   <span className="size-[7px] rounded-full bg-accent" />
                   v{SITE_CONFIG.version}
@@ -89,7 +89,6 @@ export default function Home() {
       <section className="section" aria-labelledby="cta-heading">
         <div className="container">
           <div className="rounded-lg border border-line bg-surface p-[clamp(2.2rem,5vw,3.4rem)_clamp(1.5rem,4vw,3rem)] text-center shadow-sm" data-reveal>
-
             <h2 id="cta-heading" className="mb-[0.7rem]">
               Ready to organize your files?
             </h2>
@@ -97,14 +96,18 @@ export default function Home() {
               Download JishAtlas for Windows and turn a messy folder into something you can find
               things in.
             </p>
-            <div className="cta-row justify-center">
+            <div className="cta-row justify-center flex-wrap items-stretch">
               <DownloadCTA />
+              <ExeDownloadCTA />
               <Link className="btn secondary" to="/docs/introduction">
                 Read the docs
               </Link>
             </div>
             <div className="mt-[1.1rem]">
               <StoreNote />
+            </div>
+            <div className="mx-auto mt-4 max-w-[32rem] text-left">
+              <SmartScreenNotice />
             </div>
           </div>
         </div>

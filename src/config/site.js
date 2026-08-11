@@ -15,6 +15,9 @@ export const SITE_CONFIG = {
   /** Primary download destination (Microsoft Store). TODO: fill in when published. */
   microsoftStoreUrl: "",
 
+  /** Direct EXE download destination (GitHub releases). */
+  exeReleaseUrl: "https://github.com/jishnudutta/JishAtlas/releases/tag/v0.1.0-alpha",
+
   /** Optional GitHub repo URL. Only rendered when set. Example: "https://github.com/jishworks/jishatlas" */
   githubUrl: "",
 

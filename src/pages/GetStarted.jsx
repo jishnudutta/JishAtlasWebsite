@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import PageMeta from "../components/PageMeta";
-import DownloadCTA, { StoreNote } from "../components/DownloadCTA";
+import DownloadCTA, { ExeDownloadCTA, StoreNote, SmartScreenNotice } from "../components/DownloadCTA";
 import Callout from "../components/Callout";
 import { SITE_CONFIG } from "../config/site";
 
@@ -19,14 +19,18 @@ export default function GetStarted() {
             <h1 id="gs-title">Get started with JishAtlas</h1>
             <p style={{ fontSize: "1.1rem" }}>From download to your first organized folder.</p>
           </div>
-          <div className="cta-row">
+          <div className="cta-row flex-wrap items-stretch">
             <DownloadCTA />
+            <ExeDownloadCTA />
             <Link className="btn secondary" to="/docs/introduction">
               View Documentation
             </Link>
           </div>
           <div className="mt-[0.9rem]">
             <StoreNote compact />
+          </div>
+          <div className="mt-4 max-w-[32rem]">
+            <SmartScreenNotice />
           </div>
         </div>
       </section>
@@ -35,23 +39,28 @@ export default function GetStarted() {
         <div className="container">
           {/* STEP 1 */}
           <div className="grid grid-cols-[auto_1fr] gap-[1.4rem] border-b border-line py-[1.6rem] first:pt-2 max-[640px]:grid-cols-1 max-[640px]:gap-[0.9rem]" data-reveal style={{ "--reveal-delay": "40ms" }}>
-
             <span className="flex size-[52px] shrink-0 items-center justify-center rounded bg-accent-soft font-mono text-[1.4rem] font-semibold text-accent-strong max-[640px]:size-11 max-[640px]:text-[1.1rem]">
               1
             </span>
             <div>
               <h3 className="mb-[0.4rem] text-[1.2rem]">Download</h3>
               <p className="mb-[0.9rem] text-ink-2">
-                Click <strong>Download for Windows</strong>. JishAtlas opens through the Microsoft
-                Store — install it like any other app. The Store version is signed, so you won't
-                see the unsigned-app warning.
+                Download JishAtlas using either of the following options:
               </p>
+              <ul className="mb-[0.9rem] list-disc pl-5 text-ink-2 space-y-2">
+                <li>
+                  <strong>Microsoft Store (Coming soon):</strong> Click <strong>Download for Windows</strong> to install via the Microsoft Store. Store apps are signed and verified.
+                </li>
+                <li>
+                  <strong>Direct EXE:</strong> Click <strong>Download EXE directly</strong> to fetch the standalone installer directly from the official JishAtlas GitHub release.
+                </li>
+              </ul>
+              <SmartScreenNotice className="mt-3 max-w-[36rem]" />
             </div>
           </div>
 
           {/* STEP 2 */}
           <div className="grid grid-cols-[auto_1fr] gap-[1.4rem] border-b border-line py-[1.6rem] max-[640px]:grid-cols-1 max-[640px]:gap-[0.9rem]" data-reveal style={{ "--reveal-delay": "100ms" }}>
-
             <span className="flex size-[52px] shrink-0 items-center justify-center rounded bg-accent-soft font-mono text-[1.4rem] font-semibold text-accent-strong max-[640px]:size-11 max-[640px]:text-[1.1rem]">
               2
             </span>
@@ -81,7 +90,6 @@ export default function GetStarted() {
 
           {/* STEP 3 */}
           <div className="grid grid-cols-[auto_1fr] gap-[1.4rem] border-b border-line py-[1.6rem] max-[640px]:grid-cols-1 max-[640px]:gap-[0.9rem]" data-reveal style={{ "--reveal-delay": "160ms" }}>
-
             <span className="flex size-[52px] shrink-0 items-center justify-center rounded bg-accent-soft font-mono text-[1.4rem] font-semibold text-accent-strong max-[640px]:size-11 max-[640px]:text-[1.1rem]">
               3
             </span>
@@ -96,7 +104,6 @@ export default function GetStarted() {
 
           {/* STEP 4 */}
           <div className="grid grid-cols-[auto_1fr] gap-[1.4rem] border-b border-line py-[1.6rem] max-[640px]:grid-cols-1 max-[640px]:gap-[0.9rem]" data-reveal style={{ "--reveal-delay": "220ms" }}>
-
             <span className="flex size-[52px] shrink-0 items-center justify-center rounded bg-accent-soft font-mono text-[1.4rem] font-semibold text-accent-strong max-[640px]:size-11 max-[640px]:text-[1.1rem]">
               4
             </span>
@@ -117,7 +124,6 @@ export default function GetStarted() {
 
           {/* STEP 5 */}
           <div className="grid grid-cols-[auto_1fr] gap-[1.4rem] border-b border-line py-[1.6rem] max-[640px]:grid-cols-1 max-[640px]:gap-[0.9rem]" data-reveal style={{ "--reveal-delay": "280ms" }}>
-
             <span className="flex size-[52px] shrink-0 items-center justify-center rounded bg-accent-soft font-mono text-[1.4rem] font-semibold text-accent-strong max-[640px]:size-11 max-[640px]:text-[1.1rem]">
               5
             </span>
@@ -149,20 +155,23 @@ export default function GetStarted() {
 
           {/* DONE */}
           <div className="mt-[2.5rem] rounded-lg border border-line bg-surface p-[clamp(2.2rem,5vw,3.4rem)_clamp(1.5rem,4vw,3rem)] text-center shadow-sm" data-reveal style={{ "--reveal-delay": "120ms" }}>
-
             <h2 className="mb-[0.7rem]">That's it.</h2>
             <p className="mx-auto mb-[1.6rem] max-w-[34rem] text-ink-2">
               From messy to organized in about five minutes. v{SITE_CONFIG.version} is an early
               alpha — more capabilities are planned for future releases.
             </p>
-            <div className="cta-row justify-center">
+            <div className="cta-row justify-center flex-wrap items-stretch">
               <DownloadCTA />
+              <ExeDownloadCTA />
               <Link className="btn secondary" to="/docs/quick-start">
                 Read the quick start
               </Link>
             </div>
             <div className="mt-4">
               <StoreNote />
+            </div>
+            <div className="mx-auto mt-4 max-w-[32rem] text-left">
+              <SmartScreenNotice />
             </div>
           </div>
         </div>
