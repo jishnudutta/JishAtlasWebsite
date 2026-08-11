@@ -7,3 +7,7 @@ desktop-v2.db*
 *.log
 README.md
 LICENSE
+.env
+.env.*
+!.env.example
+deploy.sh

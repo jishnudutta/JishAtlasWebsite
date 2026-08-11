@@ -2,10 +2,10 @@
 FROM node:22-alpine AS build
 WORKDIR /app
 
-# No package-lock.json in this repo, so npm install (not npm ci).
-# Copy only the manifest first so dependency layers stay cached across builds.
-COPY package.json ./
-RUN npm install --no-audit --no-fund
+# Reproducible installs via the committed lockfile; copy manifests first so
+# dependency layers stay cached across builds.
+COPY package.json package-lock.json ./
+RUN npm ci --no-audit --no-fund
 
 # Copy the rest of the source and build the static bundle.
 COPY . .
