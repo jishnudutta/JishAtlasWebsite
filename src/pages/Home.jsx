@@ -34,15 +34,12 @@ export default function Home() {
                 JishAtlas analyzes your files and suggests a clean, logical organization while
                 keeping you in control of every change.
               </p>
-              <div className="cta-row mb-[1rem] flex-wrap items-stretch" data-reveal style={{ "--reveal-delay": "140ms" }}>
+              <div className="cta-row mb-[1rem] flex-wrap items-start" data-reveal style={{ "--reveal-delay": "140ms" }}>
                 <DownloadCTA />
                 <ExeDownloadCTA />
                 <Link className="btn secondary" to="/docs/introduction">
                   View Documentation
                 </Link>
-              </div>
-              <div className="mb-[1rem]" data-reveal style={{ "--reveal-delay": "180ms" }}>
-                <StoreNote compact />
               </div>
               <div className="mb-[1.6rem] max-w-[32rem]" data-reveal style={{ "--reveal-delay": "210ms" }}>
                 <SmartScreenNotice />
@@ -96,15 +93,12 @@ export default function Home() {
               Download JishAtlas for Windows and turn a messy folder into something you can find
               things in.
             </p>
-            <div className="cta-row justify-center flex-wrap items-stretch">
+            <div className="cta-row justify-center flex-wrap items-start">
               <DownloadCTA />
               <ExeDownloadCTA />
               <Link className="btn secondary" to="/docs/introduction">
                 Read the docs
               </Link>
-            </div>
-            <div className="mt-[1.1rem]">
-              <StoreNote />
             </div>
             <div className="mx-auto mt-4 max-w-[32rem] text-left">
               <SmartScreenNotice />

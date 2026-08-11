@@ -69,7 +69,7 @@ export default function Navbar() {
             </a>
           )}
           <div className="max-[860px]:hidden">
-            <DownloadCTA label="Download for Windows" size="sm" />
+            <DownloadCTA label="Download for Windows" size="sm" showNote={false} />
           </div>
           <button
             className="ml-auto hidden size-[42px] items-center justify-center rounded-[6px] border border-line-strong bg-transparent text-ink hover:bg-bg-soft max-[860px]:inline-flex"
@@ -101,7 +101,7 @@ export default function Navbar() {
             {n.label}
           </NavLink>
         ))}
-        <DownloadCTA label="Download for Windows" className="mt-[0.9rem] block" />
+        <DownloadCTA label="Download for Windows" className="mt-[0.9rem] block" showNote={false} />
       </nav>
     </header>
   );

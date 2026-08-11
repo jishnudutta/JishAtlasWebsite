@@ -19,15 +19,12 @@ export default function GetStarted() {
             <h1 id="gs-title">Get started with JishAtlas</h1>
             <p style={{ fontSize: "1.1rem" }}>From download to your first organized folder.</p>
           </div>
-          <div className="cta-row flex-wrap items-stretch">
+          <div className="cta-row flex-wrap items-start">
             <DownloadCTA />
             <ExeDownloadCTA />
             <Link className="btn secondary" to="/docs/introduction">
               View Documentation
             </Link>
-          </div>
-          <div className="mt-[0.9rem]">
-            <StoreNote compact />
           </div>
           <div className="mt-4 max-w-[32rem]">
             <SmartScreenNotice />
@@ -160,15 +157,12 @@ export default function GetStarted() {
               From messy to organized in about five minutes. v{SITE_CONFIG.version} is an early
               alpha — more capabilities are planned for future releases.
             </p>
-            <div className="cta-row justify-center flex-wrap items-stretch">
+            <div className="cta-row justify-center flex-wrap items-start">
               <DownloadCTA />
               <ExeDownloadCTA />
               <Link className="btn secondary" to="/docs/quick-start">
                 Read the quick start
               </Link>
-            </div>
-            <div className="mt-4">
-              <StoreNote />
             </div>
             <div className="mx-auto mt-4 max-w-[32rem] text-left">
               <SmartScreenNotice />

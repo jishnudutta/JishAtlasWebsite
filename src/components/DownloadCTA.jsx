@@ -11,29 +11,24 @@ export default function DownloadCTA({
   variant = "primary",
   size,
   className = "",
+  showNote = true,
 }) {
   const { microsoftStoreUrl } = SITE_CONFIG;
 
-  if (microsoftStoreUrl) {
-    return (
-      <Button
-        href={microsoftStoreUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        variant={variant}
-        size={size}
-        className={className}
-        aria-label={`${label} — opens the Microsoft Store listing`}
-      >
-        <DownloadIcon size={16} />
-        {label}
-      </Button>
-    );
-  }
-
-  // No Store URL configured yet: render a clearly marked placeholder instead
-  // of inventing a link.
-  return (
+  const button = microsoftStoreUrl ? (
+    <Button
+      href={microsoftStoreUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      variant={variant}
+      size={size}
+      className={className}
+      aria-label={`${label} — opens the Microsoft Store listing`}
+    >
+      <DownloadIcon size={16} />
+      {label}
+    </Button>
+  ) : (
     <Button
       variant={variant}
       size={size}
@@ -44,6 +39,15 @@ export default function DownloadCTA({
       <DownloadIcon size={16} />
       {label}
     </Button>
+  );
+
+  if (!showNote) return button;
+
+  return (
+    <div className="inline-flex flex-col items-start gap-1.5">
+      {button}
+      <StoreNote compact />
+    </div>
   );
 }
 
@@ -90,7 +94,7 @@ export function StoreNote({ compact = false }) {
     return (
       <p className="font-mono text-[0.76rem] text-ink-3">
         <span className="inline-flex items-center gap-[0.35rem] rounded border border-[#f0dfc0] bg-warn-soft px-2 py-[0.15rem] font-medium text-warn">
-          ● Store listing coming soon
+          ● Microsoft Store listing coming soon
         </span>
       </p>
     );
