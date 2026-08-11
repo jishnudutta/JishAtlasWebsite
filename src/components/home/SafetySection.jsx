@@ -30,7 +30,7 @@ export default function SafetySection() {
   return (
     <section className="section bg-bg-soft" aria-labelledby="safety-heading">
       <div className="container">
-        <div className="section-head">
+        <div className="section-head" data-reveal>
           <p className="kicker">Safety first</p>
           <h2 id="safety-heading">AI suggests. You decide.</h2>
           <p>
@@ -39,7 +39,8 @@ export default function SafetySection() {
           </p>
         </div>
 
-        <div className="mb-[1.8rem] mt-[1.2rem] flex flex-wrap items-center gap-2" aria-label="Organization pipeline">
+        <div className="mb-[1.8rem] mt-[1.2rem] flex flex-wrap items-center gap-2" aria-label="Organization pipeline" data-reveal style={{ "--reveal-delay": "60ms" }}>
+
           {FLOW.map((f, i) => (
             <span key={f} className="contents">
               <span className={`inline-flex items-center gap-2 rounded-[6px] border bg-surface px-[0.85rem] py-2 text-[0.92rem] font-semibold text-ink ${i === 1 || i === 2 ? "border-accent bg-accent-soft" : "border-line-strong"}`}>
@@ -53,7 +54,8 @@ export default function SafetySection() {
           ))}
         </div>
 
-        <div className="grid-2">
+        <div className="grid-2" data-reveal style={{ "--reveal-delay": "120ms" }}>
+
           <ul className="checklist m-0 grid list-none gap-[0.6rem] p-0">
             {CHECKS.map((c) => (
               <li key={c} className="flex items-start gap-[0.65rem] text-[0.95rem] text-ink-2">

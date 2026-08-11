@@ -26,24 +26,28 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] items-center gap-[clamp(2rem,5vw,4rem)] max-[960px]:grid-cols-1">
             <div>
-              <h1 id="hero-heading" className="mb-[1.2rem]">
+              <h1 id="hero-heading" className="mb-[1.2rem]" data-reveal>
+
                 Organize your files.
                 <span className="block text-accent-strong">Let AI handle the mess.</span>
               </h1>
-              <p className="mb-[1.6rem] max-w-[32rem] text-[clamp(1.05rem,1.6vw,1.2rem)] text-ink-2">
+              <p className="mb-[1.6rem] max-w-[32rem] text-[clamp(1.05rem,1.6vw,1.2rem)] text-ink-2" data-reveal style={{ "--reveal-delay": "70ms" }}>
+
                 JishAtlas analyzes your files and suggests a clean, logical organization while
                 keeping you in control of every change.
               </p>
-              <div className="cta-row mb-[1.6rem]">
+              <div className="cta-row mb-[1.6rem]" data-reveal style={{ "--reveal-delay": "140ms" }}>
+
                 <DownloadCTA />
                 <Link className="btn secondary" to="/docs/introduction">
                   View Documentation
                 </Link>
               </div>
-              <div className="mb-[0.9rem]">
+              <div className="mb-[0.9rem]" data-reveal style={{ "--reveal-delay": "210ms" }}>
                 <StoreNote compact />
               </div>
-              <div className="chip-row">
+              <div className="chip-row" data-reveal style={{ "--reveal-delay": "280ms" }}>
+
                 <span className="chip">
                   <span className="size-[7px] rounded-full bg-accent" />
                   v{SITE_CONFIG.version}
@@ -58,7 +62,7 @@ export default function Home() {
                 </span>
               </div>
             </div>
-            <div className="max-[960px]:mt-4">
+            <div className="max-[960px]:mt-4" data-reveal style={{ "--reveal-delay": "100ms" }}>
               <HeroVisual />
             </div>
           </div>
@@ -84,7 +88,8 @@ export default function Home() {
       {/* FINAL CTA */}
       <section className="section" aria-labelledby="cta-heading">
         <div className="container">
-          <div className="rounded-lg border border-line bg-surface p-[clamp(2.2rem,5vw,3.4rem)_clamp(1.5rem,4vw,3rem)] text-center shadow-sm">
+          <div className="rounded-lg border border-line bg-surface p-[clamp(2.2rem,5vw,3.4rem)_clamp(1.5rem,4vw,3rem)] text-center shadow-sm" data-reveal>
+
             <h2 id="cta-heading" className="mb-[0.7rem]">
               Ready to organize your files?
             </h2>

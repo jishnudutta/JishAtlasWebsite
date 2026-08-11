@@ -33,7 +33,7 @@ export default function AIBackendSelector() {
   return (
     <section className="section" aria-labelledby="ai-heading">
       <div className="container">
-        <div className="section-head">
+        <div className="section-head" data-reveal>
           <p className="kicker">AI backends</p>
           <h2 id="ai-heading">Pick where the thinking happens</h2>
           <p>
@@ -42,7 +42,8 @@ export default function AIBackendSelector() {
           </p>
         </div>
 
-        <div className="mb-[1.2rem] grid grid-cols-2 gap-4 max-[640px]:grid-cols-1" role="group" aria-label="Choose AI backend">
+        <div className="mb-[1.2rem] grid grid-cols-2 gap-4 max-[640px]:grid-cols-1" role="group" aria-label="Choose AI backend" data-reveal style={{ "--reveal-delay": "60ms" }}>
+
           {Object.entries(OPTIONS).map(([key, o]) => (
             <button
               key={key}

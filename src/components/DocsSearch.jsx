@@ -36,7 +36,7 @@ export default function DocsSearch() {
         role="searchbox"
         placeholder="Search docs…"
         aria-label="Search documentation"
-        className="min-h-[40px] w-full rounded border border-line-strong bg-surface px-3 py-2 pl-[2.1rem] font-sans text-[0.92rem] text-ink focus:border-accent focus:outline-2 focus:outline-accent"
+        className="min-h-[40px] w-full rounded border border-line-strong bg-surface px-3 py-2 pl-[2.1rem] font-sans text-[0.92rem] text-ink focus:border-accent focus:outline-2 focus:outline-accent max-[480px]:text-[16px]"
         value={q}
         onChange={(e) => {
           setQ(e.target.value);

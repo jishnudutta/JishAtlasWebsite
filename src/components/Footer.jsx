@@ -68,7 +68,7 @@ export default function Footer() {
         )}
       </div>
       <div className="border-t border-line">
-        <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-3 px-6 py-[1.1rem] font-mono text-[0.78rem] text-ink-3">
+        <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-3 px-6 pb-[calc(1.1rem+env(safe-area-inset-bottom))] pt-[1.1rem] font-mono text-[0.78rem] text-ink-3">
           <span>
             © 2026 {SITE_CONFIG.company} · {SITE_CONFIG.name} is open source
           </span>

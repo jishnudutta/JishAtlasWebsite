@@ -5,7 +5,7 @@ export default function DeveloperSection() {
   return (
     <section className="section tight" aria-labelledby="developer-heading">
       <div className="container">
-        <div className="mx-auto max-w-[40rem] text-center">
+        <div className="mx-auto max-w-[40rem] text-center" data-reveal>
           <p className="kicker">Developer</p>
           <h2 id="developer-heading" className="mb-[0.8rem]">
             Built by JishWorks

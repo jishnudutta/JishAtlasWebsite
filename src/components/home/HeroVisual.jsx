@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FolderIcon } from "../icons";
 
 const BEFORE = [
   { text: "Downloads/", cls: "ok" },
@@ -34,6 +35,9 @@ const AFTER = [
   { text: "   └─ holiday.jpg", cls: "file" },
 ];
 
+const LINE_MS = { before: 160, analyzing: 300, after: 130 };
+const HOLD_MS = { before: 500, analyzing: 700 };
+
 function Line({ l }) {
   return (
     <div style={{ whiteSpace: "pre" }}>
@@ -47,20 +51,39 @@ function Line({ l }) {
 
 export default function HeroVisual() {
   const reduced = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const [state, setState] = useState(reduced ? "after" : "before");
+  const [phase, setPhase] = useState(reduced ? "after" : "before"); // before | analyzing | after
+  const [shown, setShown] = useState(reduced ? Infinity : 0);
 
+  // Line-by-line reveal: advance one line per tick, then move to the next phase.
   useEffect(() => {
     if (reduced) return;
-    const t1 = setTimeout(() => setState("analyzing"), 1100);
-    const t2 = setTimeout(() => setState("after"), 2900);
-    return () => {
-      clearTimeout(t1);
-      clearTimeout(t2);
-    };
-  }, [reduced]);
+    const lines = phase === "before" ? BEFORE : phase === "analyzing" ? ANALYZING : AFTER;
+    if (shown < lines.length) {
+      const t = setTimeout(() => setShown(shown + 1), LINE_MS[phase]);
+      return () => clearTimeout(t);
+    }
+    if (phase !== "after") {
+      const t = setTimeout(() => {
+        setPhase(phase === "before" ? "analyzing" : "after");
+        setShown(0);
+      }, HOLD_MS[phase]);
+      return () => clearTimeout(t);
+    }
+    return undefined;
+  }, [phase, shown, reduced]);
 
-  const lines = state === "before" ? BEFORE : state === "analyzing" ? ANALYZING : AFTER;
-  const status = state === "before" ? "before" : state === "analyzing" ? "analyzing" : "after";
+  const run = () => {
+    if (reduced) {
+      setPhase("after");
+      return;
+    }
+    setPhase("before");
+    setShown(0);
+  };
+
+  const lines = phase === "before" ? BEFORE : phase === "analyzing" ? ANALYZING : AFTER;
+  const visible = lines.slice(0, shown); // shown is Infinity under reduced motion → full tree
+  const status = phase === "before" ? "before" : phase === "analyzing" ? "analyzing" : "after";
 
   return (
     <div>
@@ -75,17 +98,23 @@ export default function HeroVisual() {
             Downloads — {status}
           </span>
         </div>
-        <div className="overflow-x-auto px-[1.2rem] py-[1.1rem] pb-[1.25rem] font-mono text-[0.82rem] leading-[1.72] text-code-fg" aria-live="polite">
-          {state === "analyzing" && <span className="cursor" aria-hidden="true" />}
-          {lines.map((l, i) => (
+        <div className="overflow-x-auto px-[1.2rem] py-[1.1rem] pb-[1.25rem] font-mono text-[0.82rem] leading-[1.72] text-code-fg">
+          {phase === "analyzing" && !reduced && <span className="cursor" aria-hidden="true" />}
+          {visible.map((l, i) => (
             <Line key={i} l={l} />
           ))}
         </div>
       </div>
-      <p className="mt-[0.8rem] flex items-center gap-2 font-mono text-[0.74rem] text-ink-3">
-        <span className="size-[7px] rounded-full bg-accent" aria-hidden="true" />
-        Simulated demo — JishAtlas only ever touches folders you choose.
-      </p>
+      <div className="mt-[0.85rem] flex flex-wrap items-center justify-between gap-3">
+        <p className="m-0 flex items-center gap-2 font-mono text-[0.74rem] text-ink-3">
+          <span className="size-[7px] rounded-full bg-accent" aria-hidden="true" />
+          Simulated demo — JishAtlas only ever touches folders you choose.
+        </p>
+        <button className="btn secondary sm" type="button" onClick={run}>
+          <FolderIcon size={13} />
+          Organize this folder
+        </button>
+      </div>
     </div>
   );
 }

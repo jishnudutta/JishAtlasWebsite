@@ -18,7 +18,7 @@ export default function ProjectProtection() {
     <section className="section bg-bg-soft" aria-labelledby="projects-heading">
       <div className="container">
         <div className="grid-2 items-center">
-          <div>
+          <div data-reveal>
             <p className="kicker">Project protection</p>
             <h2 id="projects-heading">Your projects stay together</h2>
             <p>
@@ -47,7 +47,9 @@ export default function ProjectProtection() {
               </li>
             </ul>
           </div>
-          <FileTree tree={PROJECT} collapsible />
+          <div data-reveal style={{ "--reveal-delay": "100ms" }}>
+            <FileTree tree={PROJECT} collapsible />
+          </div>
         </div>
       </div>
     </section>

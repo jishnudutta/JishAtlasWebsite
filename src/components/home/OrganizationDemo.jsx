@@ -93,7 +93,7 @@ export default function OrganizationDemo() {
   return (
     <section className="section" aria-labelledby="demo-heading">
       <div className="container">
-        <div className="section-head">
+        <div className="section-head" data-reveal>
           <p className="kicker">Live demo</p>
           <h2 id="demo-heading">See JishAtlas in action</h2>
           <p>
@@ -102,7 +102,8 @@ export default function OrganizationDemo() {
           </p>
         </div>
 
-        <div className="overflow-hidden rounded-lg border border-line bg-surface shadow-md">
+        <div className="overflow-hidden rounded-lg border border-line bg-surface shadow-md" data-reveal style={{ "--reveal-delay": "80ms" }}>
+
           <div className="flex flex-wrap items-center gap-3 border-b border-line bg-bg-soft px-[1.2rem] py-[0.9rem]">
             <span className="mr-auto font-mono text-[0.78rem] text-ink-3">Downloads — simulated demo</span>
             {stage !== "idle" && (

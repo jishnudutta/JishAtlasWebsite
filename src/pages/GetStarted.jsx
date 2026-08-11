@@ -14,7 +14,7 @@ export default function GetStarted() {
 
       <section className="pt-[clamp(3rem,6vw,4.5rem)]" aria-labelledby="gs-title">
         <div className="container">
-          <div className="section-head mb-[1.6rem]">
+          <div className="section-head mb-[1.6rem]" data-reveal>
             <p className="kicker">Get started</p>
             <h1 id="gs-title">Get started with JishAtlas</h1>
             <p style={{ fontSize: "1.1rem" }}>From download to your first organized folder.</p>
@@ -34,7 +34,8 @@ export default function GetStarted() {
       <section className="section tight" aria-label="Steps">
         <div className="container">
           {/* STEP 1 */}
-          <div className="grid grid-cols-[auto_1fr] gap-[1.4rem] border-b border-line py-[1.6rem] first:pt-2 max-[640px]:grid-cols-1 max-[640px]:gap-[0.9rem]">
+          <div className="grid grid-cols-[auto_1fr] gap-[1.4rem] border-b border-line py-[1.6rem] first:pt-2 max-[640px]:grid-cols-1 max-[640px]:gap-[0.9rem]" data-reveal style={{ "--reveal-delay": "40ms" }}>
+
             <span className="flex size-[52px] shrink-0 items-center justify-center rounded bg-accent-soft font-mono text-[1.4rem] font-semibold text-accent-strong max-[640px]:size-11 max-[640px]:text-[1.1rem]">
               1
             </span>
@@ -49,7 +50,8 @@ export default function GetStarted() {
           </div>
 
           {/* STEP 2 */}
-          <div className="grid grid-cols-[auto_1fr] gap-[1.4rem] border-b border-line py-[1.6rem] max-[640px]:grid-cols-1 max-[640px]:gap-[0.9rem]">
+          <div className="grid grid-cols-[auto_1fr] gap-[1.4rem] border-b border-line py-[1.6rem] max-[640px]:grid-cols-1 max-[640px]:gap-[0.9rem]" data-reveal style={{ "--reveal-delay": "100ms" }}>
+
             <span className="flex size-[52px] shrink-0 items-center justify-center rounded bg-accent-soft font-mono text-[1.4rem] font-semibold text-accent-strong max-[640px]:size-11 max-[640px]:text-[1.1rem]">
               2
             </span>
@@ -78,7 +80,8 @@ export default function GetStarted() {
           </div>
 
           {/* STEP 3 */}
-          <div className="grid grid-cols-[auto_1fr] gap-[1.4rem] border-b border-line py-[1.6rem] max-[640px]:grid-cols-1 max-[640px]:gap-[0.9rem]">
+          <div className="grid grid-cols-[auto_1fr] gap-[1.4rem] border-b border-line py-[1.6rem] max-[640px]:grid-cols-1 max-[640px]:gap-[0.9rem]" data-reveal style={{ "--reveal-delay": "160ms" }}>
+
             <span className="flex size-[52px] shrink-0 items-center justify-center rounded bg-accent-soft font-mono text-[1.4rem] font-semibold text-accent-strong max-[640px]:size-11 max-[640px]:text-[1.1rem]">
               3
             </span>
@@ -92,7 +95,8 @@ export default function GetStarted() {
           </div>
 
           {/* STEP 4 */}
-          <div className="grid grid-cols-[auto_1fr] gap-[1.4rem] border-b border-line py-[1.6rem] max-[640px]:grid-cols-1 max-[640px]:gap-[0.9rem]">
+          <div className="grid grid-cols-[auto_1fr] gap-[1.4rem] border-b border-line py-[1.6rem] max-[640px]:grid-cols-1 max-[640px]:gap-[0.9rem]" data-reveal style={{ "--reveal-delay": "220ms" }}>
+
             <span className="flex size-[52px] shrink-0 items-center justify-center rounded bg-accent-soft font-mono text-[1.4rem] font-semibold text-accent-strong max-[640px]:size-11 max-[640px]:text-[1.1rem]">
               4
             </span>
@@ -112,7 +116,8 @@ export default function GetStarted() {
           </div>
 
           {/* STEP 5 */}
-          <div className="grid grid-cols-[auto_1fr] gap-[1.4rem] border-b border-line py-[1.6rem] max-[640px]:grid-cols-1 max-[640px]:gap-[0.9rem]">
+          <div className="grid grid-cols-[auto_1fr] gap-[1.4rem] border-b border-line py-[1.6rem] max-[640px]:grid-cols-1 max-[640px]:gap-[0.9rem]" data-reveal style={{ "--reveal-delay": "280ms" }}>
+
             <span className="flex size-[52px] shrink-0 items-center justify-center rounded bg-accent-soft font-mono text-[1.4rem] font-semibold text-accent-strong max-[640px]:size-11 max-[640px]:text-[1.1rem]">
               5
             </span>
@@ -143,7 +148,8 @@ export default function GetStarted() {
           </div>
 
           {/* DONE */}
-          <div className="mt-[2.5rem] rounded-lg border border-line bg-surface p-[clamp(2.2rem,5vw,3.4rem)_clamp(1.5rem,4vw,3rem)] text-center shadow-sm">
+          <div className="mt-[2.5rem] rounded-lg border border-line bg-surface p-[clamp(2.2rem,5vw,3.4rem)_clamp(1.5rem,4vw,3rem)] text-center shadow-sm" data-reveal style={{ "--reveal-delay": "120ms" }}>
+
             <h2 className="mb-[0.7rem]">That's it.</h2>
             <p className="mx-auto mb-[1.6rem] max-w-[34rem] text-ink-2">
               From messy to organized in about five minutes. v{SITE_CONFIG.version} is an early

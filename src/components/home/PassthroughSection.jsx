@@ -19,8 +19,10 @@ export default function PassthroughSection() {
     <section className="section" aria-labelledby="passthrough-heading">
       <div className="container">
         <div className="grid-2 items-center">
-          <FileTree tree={TREE} collapsible />
-          <div>
+          <div data-reveal className="min-w-0">
+            <FileTree tree={TREE} collapsible />
+          </div>
+          <div data-reveal style={{ "--reveal-delay": "100ms" }}>
             <p className="kicker">Passthrough directories</p>
             <h2 id="passthrough-heading">Some folders are left alone</h2>
             <p>

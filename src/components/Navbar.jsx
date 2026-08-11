@@ -85,7 +85,7 @@ export default function Navbar() {
 
       <nav
         id="mobile-menu"
-        className={`border-t border-line bg-surface px-6 pb-5 pt-3 ${open ? "block" : "hidden"}`}
+        className={`border-t border-line bg-surface px-6 pb-[calc(1.25rem+env(safe-area-inset-bottom))] pt-3 ${open ? "block animate-[fade-in_0.18s_ease]" : "hidden"}`}
         aria-label="Mobile"
       >
         {NAV.map((n) => (

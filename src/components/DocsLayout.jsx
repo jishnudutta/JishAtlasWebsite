@@ -68,6 +68,10 @@ export default function DocsLayout({ children }) {
               { label: doc.title },
             ]}
           />
+          {/* In-page TOC for screens where the sticky sidebar TOC is hidden */}
+          <div className="hidden max-[1080px]:block">
+            <Toc sections={doc.sections} mobile />
+          </div>
           {children}
           <nav className="mt-[3.5rem] flex justify-between gap-4 border-t border-line pt-[1.6rem]" aria-label="Documentation pagination">
             {prev ? (

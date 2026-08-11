@@ -185,6 +185,45 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(60px + 20px);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Mobile hardening: prevent horizontal page scroll from wide content, and
+   remove the iOS tap-highlight flash + double-tap zoom delay on controls. */
+html,
+body {
+  overflow-x: clip;
+}
+
+@supports not (overflow: clip) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
+button,
+a,
+summary,
+input,
+select,
+textarea,
+[role="button"] {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Prevent iOS Safari from zooming in on focused inputs (needs >= 16px).
+   Note: components that set their own font-size via a Tailwind utility (e.g.
+   DocsSearch's text-[0.92rem]) override this — they add an explicit
+   max-[480px]:text-[16px] class; this rule covers inputs without utilities. */
+@media (max-width: 480px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
 }
 
 ::selection {
@@ -396,7 +435,30 @@ pre {
   }
 }
 
+/* ---------- scroll reveal (opacity + translate, staggered via --reveal-delay) ---------- */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
 /* reduced motion */
+
+/* never hide content when the user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

@@ -94,12 +94,12 @@ export default function HowItWorks() {
   return (
     <section className="section bg-bg-soft" aria-labelledby="how-heading">
       <div className="container">
-        <div className="section-head">
+        <div className="section-head" data-reveal>
           <p className="kicker">How it works</p>
           <h2 id="how-heading">Five steps, you approve the last one</h2>
         </div>
 
-        <div className="mb-[1.6rem] grid grid-cols-5 gap-[0.6rem] max-[960px]:grid-cols-3 max-[640px]:grid-cols-2" role="group" aria-label="How it works steps">
+        <div className="mb-[1.6rem] grid grid-cols-5 gap-[0.6rem] max-[960px]:grid-cols-3 max-[640px]:grid-cols-2" role="group" aria-label="How it works steps" data-reveal style={{ "--reveal-delay": "60ms" }}>
           {STEPS.map((s, i) => (
             <button
               key={s.id}

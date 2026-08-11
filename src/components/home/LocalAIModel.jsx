@@ -15,7 +15,7 @@ export default function LocalAIModel() {
     <section className="section bg-bg-soft" aria-labelledby="model-heading">
       <div className="container">
         <div className="grid-2 items-center">
-          <div>
+          <div data-reveal>
             <p className="kicker">Local AI model</p>
             <h2 id="model-heading">One download, then it's yours</h2>
             <p>
@@ -39,7 +39,9 @@ export default function LocalAIModel() {
               The model is a separate download — it is not bundled inside the executable.
             </p>
           </div>
-          <CodeBlock lang="text" title="Model directory" code={'%LOCALAPPDATA%\\JishAtlas\\models\\'} />
+          <div data-reveal className="min-w-0" style={{ "--reveal-delay": "100ms" }}>
+            <CodeBlock lang="text" title="Model directory" code={'%LOCALAPPDATA%\\JishAtlas\\models\\'} />
+          </div>
         </div>
       </div>
     </section>

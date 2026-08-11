@@ -32,7 +32,7 @@ export default function IntroSection() {
   return (
     <section className="section" aria-labelledby="intro-heading">
       <div className="container">
-        <div className="section-head">
+        <div className="section-head" data-reveal>
           <p className="kicker">The problem</p>
           <h2 id="intro-heading">
             Your files get messy. <br />
@@ -51,18 +51,21 @@ export default function IntroSection() {
           </div>
         </div>
 
-        <p className="principle-line mb-[1.6rem] font-mono text-[1.05rem] font-semibold text-accent-strong">
+        <p className="principle-line mb-[1.6rem] font-mono text-[1.05rem] font-semibold text-accent-strong" data-reveal style={{ "--reveal-delay": "60ms" }}>
+
           JishAtlas makes sense of the mess.
         </p>
 
         <div className="grid-3">
-          {CARDS.map((c) => (
-            <div className="card hoverable rounded-lg border border-line bg-surface p-[1.4rem_1.4rem_1.5rem] shadow-sm transition-[border-color,box-shadow,transform] duration-150 hover:-translate-y-0.5 hover:border-line-strong hover:shadow-md" key={c.title}>
-              <h3 className="mb-[0.55rem] flex items-center gap-[0.6rem]">
-                <span className="shrink-0 text-accent">{c.icon}</span>
-                {c.title}
-              </h3>
-              <p className="m-0 text-[0.95rem] text-ink-2">{c.body}</p>
+          {CARDS.map((c, i) => (
+            <div key={c.title} data-reveal style={{ "--reveal-delay": `${120 + i * 90}ms` }}>
+              <div className="card hoverable h-full rounded-lg border border-line bg-surface p-[1.4rem_1.4rem_1.5rem] shadow-sm transition-[border-color,box-shadow,transform] duration-150 hover:-translate-y-0.5 hover:border-line-strong hover:shadow-md">
+                <h3 className="mb-[0.55rem] flex items-center gap-[0.6rem]">
+                  <span className="shrink-0 text-accent">{c.icon}</span>
+                  {c.title}
+                </h3>
+                <p className="m-0 text-[0.95rem] text-ink-2">{c.body}</p>
+              </div>
             </div>
           ))}
         </div>
