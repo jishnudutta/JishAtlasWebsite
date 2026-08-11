@@ -39,6 +39,11 @@ export default function Footer() {
                 Docs
               </Link>
             </li>
+            <li>
+              <Link to="/privacy" className="text-[0.95rem] text-ink-2 hover:text-accent">
+                Privacy Policy
+              </Link>
+            </li>
           </ul>
         </div>
 

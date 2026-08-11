@@ -6,6 +6,7 @@ import RevealObserver from "./components/RevealObserver";
 import Home from "./pages/Home";
 import GetStarted from "./pages/GetStarted";
 import DocsPage from "./pages/DocsPage";
+import Privacy from "./pages/Privacy";
 
 function AppRoutes() {
   const { pathname } = useLocation();
@@ -31,6 +32,7 @@ function AppRoutes() {
             <Route path="/get-started" element={<GetStarted />} />
             <Route path="/docs" element={<Navigate to="/docs/introduction" replace />} />
             <Route path="/docs/:slug" element={<DocsPage />} />
+            <Route path="/privacy" element={<Privacy />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
