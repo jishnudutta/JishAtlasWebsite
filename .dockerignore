@@ -1,0 +1,9 @@
+node_modules
+dist
+.git
+.gitignore
+.freebuff
+desktop-v2.db*
+*.log
+README.md
+LICENSE

@@ -1,0 +1,58 @@
+
+> jishatlas-website@0.1.0 dev
+> vite --host 127.0.0.1
+
+
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m278[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m5173[22m/[39m
+[2m4:18:00 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m4:18:05 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m4:18:10 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m4:18:15 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m4:18:20 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m4:18:25 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m4:18:30 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m4:18:35 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m4:18:45 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m4:18:56 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m4:59:47 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m4:59:47 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m4:59:52 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m4:59:57 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:00:02 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:00:12 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:00:28 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:00:48 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:01:13 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles/global.css, /src/components/Navbar.jsx, /src/components/Footer.jsx, /src/pages/Home.jsx, /src/pages/GetStarted.jsx, /@fs/E:\Stardance-projects\JishAtlasWebsite\src\components\DownloadCTA.jsx, /@fs/E:\Stardance-projects\JishAtlasWebsite\src\components\DocsLayout.jsx[22m
+[2m5:01:18 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:01:22 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Home.jsx, /src/styles/global.css[22m
+[2m5:01:23 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:01:26 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Footer.jsx, /src/styles/global.css[22m
+[2m5:01:28 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:01:58 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:02:00 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/E:\Stardance-projects\JishAtlasWebsite\src\components\home\DeveloperSection.jsx, /src/styles/global.css[22m
+[2m5:02:03 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:02:08 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:02:13 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:02:20 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:06:28 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:06:29 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:06:34 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:06:39 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:06:49 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:07:09 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:07:14 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:07:19 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:07:54 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:08:00 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mnginx.conf[22m
+[2m5:08:04 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:08:24 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:08:26 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mDockerfile[22m
+[2m5:08:29 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:08:34 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:09:19 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:09:29 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:09:39 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:09:44 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m
+[2m5:09:50 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/desktop-v2.db-wal[22m

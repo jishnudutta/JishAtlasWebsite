@@ -1,0 +1,15 @@
+services:
+  jishatlas:
+    build: .
+    image: jishatlas-website:latest
+    container_name: jishatlas
+    restart: unless-stopped
+    # Default host port is 8080; override on the VPS with PORT=80 docker compose up -d
+    ports:
+      - "${PORT:-8080}:80"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
