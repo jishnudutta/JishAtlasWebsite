@@ -4,9 +4,10 @@ services:
     image: jishatlas-website:latest
     container_name: jishatlas
     restart: unless-stopped
-    # Default host port is 8080; override on the VPS with PORT=80 docker compose up -d
+    # nginx listens on 80 inside the container; exposed on the host as 3002
+    # (jishatlas.jishworks.in is forwarded to VPS:3002). Override with PORT=…
     ports:
-      - "${PORT:-8080}:80"
+      - "${PORT:-3002}:80"
     healthcheck:
       test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1/"]
       interval: 30s
