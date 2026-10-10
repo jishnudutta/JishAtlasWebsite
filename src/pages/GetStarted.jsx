@@ -1,173 +1,57 @@
 import { Link } from "react-router-dom";
 import PageMeta from "../components/PageMeta";
-import DownloadCTA, { ExeDownloadCTA, StoreNote, SmartScreenNotice } from "../components/DownloadCTA";
-import Callout from "../components/Callout";
-import { SITE_CONFIG } from "../config/site";
+import { ExeDownloadCTA } from "../components/DownloadCTA";
+import StepList from "../components/StepList";
+import { SmartScreenNotice } from "../components/DownloadCTA";
+
+const STEPS = [
+  {
+    title: "Enter a folder path",
+    body: "At launch, enter the full path to an existing folder, for example C:\\Users\\You\\Downloads. Enter k to manage the Gemini API key or q to quit.",
+  },
+  {
+    title: "Choose an AI backend",
+    body: "Select Local AI or Gemini. Gemini requires an API key and sends readable text samples to Google's API.",
+  },
+  {
+    title: "Scan and plan",
+    body: "JishAtlas scans files, detects projects, then asks the selected backend to produce an organization plan.",
+  },
+  {
+    title: "Review the plan",
+    body: "Check the proposed paths and filenames. The plan is confirmed as a whole; individual items cannot be toggled.",
+  },
+  {
+    title: "Choose a mode and confirm",
+    body: "Create an organized copy or organize in place. The confirmation defaults to No.",
+  },
+];
 
 export default function GetStarted() {
   return (
     <>
       <PageMeta
         title="Get Started — JishAtlas"
-        description="From download to your first organized folder — a five-step guide to JishAtlas."
+        description="Run JishAtlas: select a folder, choose an AI backend, review the plan, and confirm how to apply it."
       />
 
-      <section className="pt-[clamp(3rem,6vw,4.5rem)]" aria-labelledby="gs-title">
-        <div className="container">
+      <section className="section" aria-labelledby="gs-title">
+        <div className="container max-w-[800px]">
           <div className="section-head mb-[1.6rem]" data-reveal>
             <p className="kicker">Get started</p>
-            <h1 id="gs-title">Get started with JishAtlas</h1>
-            <p style={{ fontSize: "1.1rem" }}>From download to your first organized folder.</p>
+            <h1 id="gs-title">Run JishAtlas</h1>
+            <p>JishAtlas is a terminal application. Its workflow is:</p>
           </div>
-          <div className="cta-row flex-wrap items-start">
-            <DownloadCTA />
+
+          <StepList steps={STEPS} />
+
+          <div className="mt-8 flex flex-wrap items-start gap-4">
             <ExeDownloadCTA />
-            <Link className="btn secondary" to="/docs/introduction">
-              View Documentation
+            <Link className="btn secondary" to="/docs/quick-start">
+              Quick start documentation
             </Link>
           </div>
-          <div className="mt-4 max-w-[32rem]">
-            <SmartScreenNotice />
-          </div>
-        </div>
-      </section>
-
-      <section className="section tight" aria-label="Steps">
-        <div className="container">
-          {/* STEP 1 */}
-          <div className="grid grid-cols-[auto_1fr] gap-[1.4rem] border-b border-line py-[1.6rem] first:pt-2 max-[640px]:grid-cols-1 max-[640px]:gap-[0.9rem]" data-reveal style={{ "--reveal-delay": "40ms" }}>
-            <span className="flex size-[52px] shrink-0 items-center justify-center rounded bg-accent-soft font-mono text-[1.4rem] font-semibold text-accent-strong max-[640px]:size-11 max-[640px]:text-[1.1rem]">
-              1
-            </span>
-            <div>
-              <h3 className="mb-[0.4rem] text-[1.2rem]">Download</h3>
-              <p className="mb-[0.9rem] text-ink-2">
-                Download JishAtlas using either of the following options:
-              </p>
-              <ul className="mb-[0.9rem] list-disc pl-5 text-ink-2 space-y-2">
-                <li>
-                  <strong>Microsoft Store (Coming soon):</strong> Click <strong>Download for Windows</strong> to install via the Microsoft Store. Store apps are signed and verified.
-                </li>
-                <li>
-                  <strong>Direct EXE:</strong> Click <strong>Download EXE directly</strong> to fetch the standalone installer directly from the official JishAtlas GitHub release.
-                </li>
-              </ul>
-              <SmartScreenNotice className="mt-3 max-w-[36rem]" />
-            </div>
-          </div>
-
-          {/* STEP 2 */}
-          <div className="grid grid-cols-[auto_1fr] gap-[1.4rem] border-b border-line py-[1.6rem] max-[640px]:grid-cols-1 max-[640px]:gap-[0.9rem]" data-reveal style={{ "--reveal-delay": "100ms" }}>
-            <span className="flex size-[52px] shrink-0 items-center justify-center rounded bg-accent-soft font-mono text-[1.4rem] font-semibold text-accent-strong max-[640px]:size-11 max-[640px]:text-[1.1rem]">
-              2
-            </span>
-            <div>
-              <h3 className="mb-[0.4rem] text-[1.2rem]">Choose your AI backend</h3>
-              <p className="mb-[0.9rem] text-ink-2">
-                On first launch, pick <strong>Local AI</strong> or <strong>Gemini</strong>:
-              </p>
-              <div className="grid-2 mt-[0.4rem]">
-                <div className="card rounded-lg border border-line bg-surface p-[1.4rem] shadow-sm">
-                  <h3 className="mb-[0.55rem] flex items-center gap-[0.6rem]">Local AI</h3>
-                  <p className="m-0 text-[0.95rem] text-ink-2">
-                    Runs on your computer, offline. File info stays on your machine. The model
-                    downloads automatically the first time.
-                  </p>
-                </div>
-                <div className="card rounded-lg border border-line bg-surface p-[1.4rem] shadow-sm">
-                  <h3 className="mb-[0.55rem] flex items-center gap-[0.6rem]">Gemini</h3>
-                  <p className="m-0 text-[0.95rem] text-ink-2">
-                    Cloud-based, needs internet and an API key. Analysis data is sent to Google's
-                    servers — handy when local hardware is limited.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* STEP 3 */}
-          <div className="grid grid-cols-[auto_1fr] gap-[1.4rem] border-b border-line py-[1.6rem] max-[640px]:grid-cols-1 max-[640px]:gap-[0.9rem]" data-reveal style={{ "--reveal-delay": "160ms" }}>
-            <span className="flex size-[52px] shrink-0 items-center justify-center rounded bg-accent-soft font-mono text-[1.4rem] font-semibold text-accent-strong max-[640px]:size-11 max-[640px]:text-[1.1rem]">
-              3
-            </span>
-            <div>
-              <h3 className="mb-[0.4rem] text-[1.2rem]">Select a folder</h3>
-              <p className="mb-[0.9rem] text-ink-2">
-                Choose the folder you want to organize — your Downloads folder is a great first
-                candidate. JishAtlas scans it, detects projects, and flags protected directories.
-              </p>
-            </div>
-          </div>
-
-          {/* STEP 4 */}
-          <div className="grid grid-cols-[auto_1fr] gap-[1.4rem] border-b border-line py-[1.6rem] max-[640px]:grid-cols-1 max-[640px]:gap-[0.9rem]" data-reveal style={{ "--reveal-delay": "220ms" }}>
-            <span className="flex size-[52px] shrink-0 items-center justify-center rounded bg-accent-soft font-mono text-[1.4rem] font-semibold text-accent-strong max-[640px]:size-11 max-[640px]:text-[1.1rem]">
-              4
-            </span>
-            <div>
-              <h3 className="mb-[0.4rem] text-[1.2rem]">Review the plan</h3>
-              <p className="mb-[0.9rem] text-ink-2">Every proposed change is listed before anything happens:</p>
-              <div className="m-[0.4rem_0_0.9rem] overflow-x-auto whitespace-nowrap rounded bg-code-bg px-[1.1rem] py-4 font-mono text-[0.85rem] leading-[1.8] text-code-fg">
-                <span className="text-code-muted">From:</span> Downloads/weather_api.py
-                <br />
-                <span className="text-code-muted">To:</span> Programming/Python/weather_api.py
-              </div>
-              <p className="mb-[0.9rem] text-ink-2">
-                You can approve everything, or drop individual changes you don't like. Nothing is
-                applied yet.
-              </p>
-            </div>
-          </div>
-
-          {/* STEP 5 */}
-          <div className="grid grid-cols-[auto_1fr] gap-[1.4rem] border-b border-line py-[1.6rem] max-[640px]:grid-cols-1 max-[640px]:gap-[0.9rem]" data-reveal style={{ "--reveal-delay": "280ms" }}>
-            <span className="flex size-[52px] shrink-0 items-center justify-center rounded bg-accent-soft font-mono text-[1.4rem] font-semibold text-accent-strong max-[640px]:size-11 max-[640px]:text-[1.1rem]">
-              5
-            </span>
-            <div>
-              <h3 className="mb-[0.4rem] text-[1.2rem]">Apply</h3>
-              <p className="mb-[0.9rem] text-ink-2">Two modes:</p>
-              <div className="grid-2 mt-[0.4rem]">
-                <div className="card rounded-lg border border-line bg-surface p-[1.4rem] shadow-sm">
-                  <h3 className="mb-[0.55rem] flex items-center gap-[0.6rem]">Organized Copy</h3>
-                  <p className="m-0 text-[0.95rem] text-ink-2">
-                    Creates a new organized folder and leaves the original completely untouched.
-                  </p>
-                </div>
-                <div className="card rounded-lg border border-line bg-surface p-[1.4rem] shadow-sm">
-                  <h3 className="mb-[0.55rem] flex items-center gap-[0.6rem]">Organize in Place</h3>
-                  <p className="m-0 text-[0.95rem] text-ink-2">
-                    Restructures the folder directly — no duplication, but the original layout is replaced.
-                  </p>
-                </div>
-              </div>
-              <Callout kind="tip" title="First time?">
-                <p>
-                  Use <strong>Organized Copy</strong>. You get the organized result and keep the
-                  original until you're confident.
-                </p>
-              </Callout>
-            </div>
-          </div>
-
-          {/* DONE */}
-          <div className="mt-[2.5rem] rounded-lg border border-line bg-surface p-[clamp(2.2rem,5vw,3.4rem)_clamp(1.5rem,4vw,3rem)] text-center shadow-sm" data-reveal style={{ "--reveal-delay": "120ms" }}>
-            <h2 className="mb-[0.7rem]">That's it.</h2>
-            <p className="mx-auto mb-[1.6rem] max-w-[34rem] text-ink-2">
-              From messy to organized in about five minutes. v{SITE_CONFIG.version} is an early
-              alpha — more capabilities are planned for future releases.
-            </p>
-            <div className="cta-row justify-center flex-wrap items-start">
-              <DownloadCTA />
-              <ExeDownloadCTA />
-              <Link className="btn secondary" to="/docs/quick-start">
-                Read the quick start
-              </Link>
-            </div>
-            <div className="mx-auto mt-4 max-w-[32rem] text-left">
-              <SmartScreenNotice />
-            </div>
-          </div>
+          <SmartScreenNotice className="mt-4 max-w-[36rem]" />
         </div>
       </section>
     </>
