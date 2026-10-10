@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { SITE_CONFIG } from "../config/site";
-import { FolderIcon } from "./icons";
 
 export default function Footer() {
   const gh = SITE_CONFIG.githubUrl;
@@ -8,11 +7,8 @@ export default function Footer() {
     <footer className="mt-12 border-t border-line bg-surface">
       <div className="mx-auto grid max-w-[1180px] grid-cols-[1.4fr_1fr_1fr] gap-10 px-6 pb-8 pt-12 max-[860px]:grid-cols-2 max-[640px]:grid-cols-1">
         <div className="max-[860px]:col-span-full max-[640px]:col-auto">
-          <Link to="/" className="logo inline-flex items-center gap-[0.55rem] text-[1.05rem] font-bold tracking-[-0.01em] text-ink no-underline hover:text-ink hover:no-underline" aria-label="JishAtlas home">
-            <span className="inline-flex size-[26px] items-center justify-center rounded-[7px] bg-accent text-white">
-              <FolderIcon size={15} />
-            </span>
-            JishAtlas
+          <Link to="/" className="logo inline-flex items-center text-ink no-underline hover:text-ink hover:no-underline" aria-label="JishAtlas home">
+            <img src="/jishatlas-logo.svg" alt="" aria-hidden="true" width="170" height="57" className="h-auto w-[170px] max-[420px]:w-[145px]" />
           </Link>
           <p className="mt-[0.8rem] max-w-[26rem] text-[0.95rem] text-ink-2">
             {SITE_CONFIG.tagline}. The AI creates the plan — you decide what gets applied.

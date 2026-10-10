@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { SITE_CONFIG } from "../config/site";
 import DownloadCTA from "./DownloadCTA";
-import { FolderIcon, GitHubIcon, MenuIcon, XIcon } from "./icons";
+import { GitHubIcon, MenuIcon, XIcon } from "./icons";
 
 const NAV = [
   { to: "/", label: "Home", end: true },
@@ -29,12 +29,9 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-[100] border-b border-line bg-bg/88 backdrop-blur-[10px]">
       <div className="mx-auto flex h-[60px] max-w-[1180px] items-center gap-6 px-6">
-        <Link to="/" className="logo inline-flex items-center gap-[0.55rem] text-[1.05rem] font-bold tracking-[-0.01em] text-ink no-underline hover:text-ink hover:no-underline" aria-label="JishAtlas home">
-          <span className="inline-flex size-[26px] items-center justify-center rounded-[7px] bg-accent text-white">
-            <FolderIcon size={15} />
-          </span>
-          JishAtlas
-          <span className="ml-[0.15rem] rounded border border-line-strong px-[5px] py-px font-mono text-[0.62rem] font-medium text-ink-3">
+        <Link to="/" className="logo inline-flex items-center gap-[0.55rem] text-ink no-underline hover:text-ink hover:no-underline" aria-label="JishAtlas home">
+          <img src="/jishatlas-logo.svg" alt="" aria-hidden="true" width="170" height="57" className="h-auto w-[170px] max-[420px]:w-[145px]" />
+          <span className="ml-[0.15rem] rounded border border-line-strong px-[5px] py-px font-mono text-[0.62rem] font-medium text-ink-3 max-[420px]:hidden">
             {SITE_CONFIG.version}
           </span>
         </Link>
