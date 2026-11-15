@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jishatlas.jishworks.in/sitemap.xml

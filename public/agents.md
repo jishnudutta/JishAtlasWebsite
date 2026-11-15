@@ -4,9 +4,9 @@ JishAtlas is a free, open-source Windows application that helps organize files
 with AI. It scans a folder, creates a proposed organization plan, and asks the
 user to review and approve the plan before applying changes.
 
-- Website: https://jishatlas.com
+- Website: https://jishatlas.jishworks.in
 - Source code: https://github.com/jishnudutta/JishAtlas
-- Documentation: https://jishatlas.com/docs/introduction
+- Documentation: https://jishatlas.jishworks.in/docs/introduction
 - Releases: https://github.com/jishnudutta/JishAtlas/releases
 - License: MIT; see the `LICENSE` file in the repository.
 
@@ -82,5 +82,5 @@ the Python organizer.
 - Preserve the review-before-apply safety boundary when changing behavior.
 - Do not claim the desktop prototype can scan or organize files until it is
   connected to the Python organizer.
-- Review the [documentation](https://jishatlas.com/docs/introduction) before
+- Review the [documentation](https://jishatlas.jishworks.in/docs/introduction) before
   giving detailed usage instructions.
