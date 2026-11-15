@@ -7,7 +7,6 @@ import { GitHubIcon, MenuIcon, XIcon } from "./icons";
 const NAV = [
   { to: "/", label: "Home", end: true },
   { to: "/get-started", label: "Get Started" },
-  { to: "/agents", label: "Agents" },
   { to: "/docs/introduction", label: "Docs" },
 ];
 

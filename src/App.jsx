@@ -7,7 +7,6 @@ import Home from "./pages/Home";
 import GetStarted from "./pages/GetStarted";
 import DocsPage from "./pages/DocsPage";
 import Privacy from "./pages/Privacy";
-import Agents from "./pages/Agents";
 
 function AppRoutes() {
   const { pathname } = useLocation();
@@ -31,7 +30,6 @@ function AppRoutes() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/get-started" element={<GetStarted />} />
-            <Route path="/agents" element={<Agents />} />
             <Route path="/docs" element={<Navigate to="/docs/introduction" replace />} />
             <Route path="/docs/:slug" element={<DocsPage />} />
             <Route path="/privacy" element={<Privacy />} />

@@ -31,11 +31,6 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/agents" className="text-[0.95rem] text-ink-2 hover:text-accent">
-                Agents
-              </Link>
-            </li>
-            <li>
               <Link to="/docs/introduction" className="text-[0.95rem] text-ink-2 hover:text-accent">
                 Docs
               </Link>
