@@ -18,8 +18,8 @@ export const SITE_CONFIG = {
   /** Direct EXE download destination (GitHub releases). */
   exeReleaseUrl: "https://github.com/jishnudutta/JishAtlas/releases/tag/v0.1.0-alpha",
 
-  /** Optional GitHub repo URL. Only rendered when set. Example: "https://github.com/jishworks/jishatlas" */
-  githubUrl: "",
+  /** GitHub repository URL. */
+  githubUrl: "https://github.com/jishnudutta/JishAtlas",
 
   /** Developer / company website (external). */
   jishWorksUrl: "https://jishworks.in",

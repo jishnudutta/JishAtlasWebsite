@@ -12,6 +12,7 @@ import ProjectProtection from "../components/home/ProjectProtection";
 import PassthroughSection from "../components/home/PassthroughSection";
 import LocalAIModel from "../components/home/LocalAIModel";
 import DeveloperSection from "../components/home/DeveloperSection";
+import { GitHubIcon } from "../components/icons";
 
 export default function Home() {
   return (
@@ -40,6 +41,9 @@ export default function Home() {
                 <Link className="btn secondary" to="/docs/introduction">
                   View Documentation
                 </Link>
+                <a className="btn secondary" href={SITE_CONFIG.githubUrl} target="_blank" rel="noopener noreferrer">
+                  <GitHubIcon size={17} /> View source on GitHub
+                </a>
               </div>
               <div className="mb-[1.6rem] max-w-[32rem]" data-reveal style={{ "--reveal-delay": "210ms" }}>
                 <SmartScreenNotice />
